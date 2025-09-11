@@ -1,0 +1,58 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# --- Virtualenv ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Alembic ---
+alembic/versions/*.py
+
+# --- Logs ---
+*.log
+logs/
+*.out
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Coverage / Testing ---
+.coverage
+coverage.xml
+htmlcov/
+pytest_cache/
+.cache/
+
+# --- MyPy / Pylint ---
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytest_cache/
+.pytype/
+pylint-report.txt
+
+# --- Build ---
+dist/
+build/
