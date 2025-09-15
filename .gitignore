@@ -56,3 +56,6 @@ pylint-report.txt
 # --- Build ---
 dist/
 build/
+
+
+.env

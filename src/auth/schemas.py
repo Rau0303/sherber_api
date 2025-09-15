@@ -20,6 +20,18 @@ class LoginWithSms(BaseModel):
         examples=["123456"]
     )
     client: ClientSchema
+
+class SendSms(BaseModel):
+    phone: str = Field(
+        ...,
+        description="Номер телефона в формате 7XXXXXXXXXX (11 цифр, без +)",
+        pattern=PHONE_REGEX,
+        min_length=PHONE_LENGTH,
+        max_length=PHONE_LENGTH,
+        examples=["77011234567"]
+    )
+    client: ClientSchema
+
     
 
 
@@ -85,3 +97,8 @@ class AuthDataSchema(BaseModel):
 class AuthResponseSchema(BaseModel):
     status: str = Field("success", description="Статус запроса", example="success")
     data: AuthDataSchema
+
+
+class SendSmsResponseSchema(BaseModel):
+    status: str = Field("success", description="Статус запроса", example="success")
+    message: str = Field("SMS-код успешно отправлен", description="сообщение запроса", example="SMS-код успешно отправлен")
