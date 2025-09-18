@@ -29,7 +29,7 @@ class AuthService:
                     raise EmailAlreadyExistsException()
 
             # 3. Создаём нового пользователя
-            user = register_schema_to_model(register=payload)
+            user = register_schema_to_model(payload=payload)
             self.session.add(user)
 
             try:

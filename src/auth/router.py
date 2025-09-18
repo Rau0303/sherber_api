@@ -14,6 +14,7 @@ router = APIRouter(prefix="/auth", tags=["Auth"])
 @router.post(
     '/register',
     response_model=AuthResponseSchema,
+    status_code=201,
     description=REGISTER_DESCRIPTION
 )
 async def register_user(
@@ -24,7 +25,7 @@ async def register_user(
         user_id = await auth_service.register_user(payload=payload)
 
         # 2. Создаём ClientInfo
-        await auth_service.register_client(user_id=user_id, client=payload.client)
+        await auth_service.register_client(user_id=user_id, payload=payload.client)
 
         # 3. Генерируем JWT токен
         access_token = create_access_token(subject=user_id)

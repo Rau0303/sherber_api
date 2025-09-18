@@ -12,6 +12,6 @@ sync_engine = create_engine(
 
 async_engine = create_async_engine(
     url=settings.DATABASE_URL_asyncpg,
-    echo = False
+    echo = True
 )
 
